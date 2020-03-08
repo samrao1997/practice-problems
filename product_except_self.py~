@@ -1,0 +1,15 @@
+#Given an array nums of n integers where n > 1, return an array output
+#such that output[i] is equal to the product of all the elements of
+#nums except nums[i].
+
+
+def product_expect_self(nums):
+    n = len(nums)
+
+    L = R = result = [0] * n
+
+    for i in range(n):
+        if i == 0:
+            L[i] = 1
+        else:
+            L[i] = L[i-1] * nums[i - 1]
